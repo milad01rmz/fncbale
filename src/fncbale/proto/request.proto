@@ -1,0 +1,245 @@
+// Adapted from BaleNova 0.3.1, MIT; see THIRD_PARTY_NOTICES.md.
+syntax = "proto3";
+package fncbale.wire.request;
+import "fncbale/proto/struct.proto";
+message Request {
+  WsRequest ws_request = 1;
+}
+message WsRequest {
+  string service_name = 1;
+  string method = 2;
+  bytes payload = 3;
+  Metadata metadata = 4;
+  int64 index = 5;
+}
+message MetadataComplexValues {
+  fixed64 fixed64_value = 6;
+}
+message MetadataValues {
+  string string_value = 1;
+  MetadataComplexValues msg_value = 2;
+}
+message MetadataKeyValues {
+  string key = 1;
+  MetadataValues value = 2;
+}
+message Metadata {
+  repeated MetadataKeyValues key_values = 1;
+}
+message KeepAliveRequest {
+  KeepAlive payloads = 2;
+}
+message KeepAlive {
+  uint32 value_should_2 = 1;
+}
+message StartPhoneAuth {
+  int64 phone_number = 1;
+  int32 app_id = 2;
+  string api_key = 3;
+  string device_hash = 4;
+  string device_title = 5;
+  int32 send_code_type = 9;
+  bytes options = 10;
+}
+message ValidateCode {
+  string transaction_hash = 1;
+  string code = 2;
+  fncbale.wire.struct.BoolValue is_jwt = 3;
+}
+message ValidatePassword {
+  string transaction_hash = 1;
+  string password = 2;
+  fncbale.wire.struct.BoolValue is_jwt = 3;
+}
+message WebCreateGroupRequest {
+  int64 rid = 1;
+  string title = 2;
+  repeated fncbale.wire.struct.WebUserPeer users = 3;
+  int32 groupType = 6;
+  repeated int32 optimizations = 7;
+  fncbale.wire.struct.WebStringValue nick = 8;
+  int32 restriction = 9;
+}
+message WebEditAboutRequest {
+  fncbale.wire.struct.WebStringValue about = 1;
+}
+message WebEditChannelNickRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+  string nick = 2;
+  int64 randomId = 3;
+}
+message WebEditGroupAboutRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+  int64 rid = 2;
+  fncbale.wire.struct.WebStringValue about = 3;
+  repeated int32 optimizations = 5;
+}
+message WebEditGroupTitleRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+  string title = 3;
+  int64 rid = 4;
+  repeated int32 optimizations = 5;
+}
+message WebEditNameRequest {
+  string name = 1;
+}
+message WebEditNickNameRequest {
+  fncbale.wire.struct.WebStringValue nickname = 1;
+}
+message WebForwardMessagesRequest {
+  fncbale.wire.struct.WebOutPeer peer = 1;
+  repeated int64 rid = 2;
+  repeated fncbale.wire.struct.WebQuotedMessageReference forwardedMessages = 3;
+  fncbale.wire.struct.WebInt64Value_1 groupedId = 4;
+}
+message WebGetContactsRequest {
+  string contactsHash = 1;
+  repeated int32 optimizations = 2;
+}
+message WebGetDiffRequest {
+  repeated fncbale.wire.struct.WebState states = 1;
+  repeated int64 optimizations = 2;
+}
+message WebGetFullGroupRequest {
+  fncbale.wire.struct.WebGroupPeer peer = 1;
+}
+message WebGetFullUserRequest {
+  fncbale.wire.struct.WebUserPeer peer = 1;
+}
+message WebGetGroupInviteURLRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+}
+message WebGetGroupMembersCountRequest {
+  fncbale.wire.struct.WebGroupPeer group = 1;
+}
+message WebGetMessagesViewsRequest {
+  fncbale.wire.struct.WebPeer peer = 1;
+  repeated fncbale.wire.struct.WebMessageId mids = 2;
+  bool increment = 3;
+  repeated fncbale.wire.struct.WebMessageId correctMids = 4;
+}
+message WebGetMyGroupsRequest {
+  int32 mode = 1;
+  bool isOwner = 2;
+  repeated fncbale.wire.struct.WebFilter filters = 3;
+}
+message WebGetNasimFileUploadUrlRequest {
+  int32 expectedSize = 1;
+  int64 crc = 2;
+  int64 uid = 3;
+  string name = 4;
+  string mimeType = 5;
+  fncbale.wire.struct.WebExPeer exPeer = 6;
+  fncbale.wire.struct.WebSendType sendType = 7;
+  int64 chunkSize = 8;
+}
+message WebGetNasimFileUrlRequest {
+  fncbale.wire.struct.WebFileLocation file = 1;
+}
+message WebGetNasimFileUrlsRequest {
+  repeated fncbale.wire.struct.WebFileLocation files = 1;
+}
+message WebGetRoutesStatesRequest {
+  repeated fncbale.wire.struct.WebGroupPeer groupPeers = 1;
+  repeated int64 optimizations = 2;
+}
+message WebInviteUserRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+  fncbale.wire.struct.WebUserPeer user = 3;
+  int64 rid = 4;
+  repeated int32 optimizations = 5;
+  fncbale.wire.struct.WebInt32Value messageCount = 6;
+}
+message WebJoinGroupRequest {
+  string token = 1;
+  repeated int32 optimizations = 2;
+}
+message WebJoinPublicGroupRequest {
+  fncbale.wire.struct.WebBot peer = 1;
+  repeated int32 optimizations = 2;
+}
+message WebKickUserRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+  fncbale.wire.struct.WebUserPeer user = 3;
+  int64 rid = 4;
+  repeated int32 optimizations = 5;
+}
+message WebLeaveGroupRequest {
+  fncbale.wire.struct.WebGroupPeer groupPeer = 1;
+  int64 rid = 2;
+  repeated int32 optimizations = 3;
+  fncbale.wire.struct.WebBoolValue_1 makeOrphan = 4;
+}
+message WebLoadDialogsRequest {
+  int64 minDate = 1;
+  int32 limit = 2;
+  repeated int32 optimizations = 3;
+  int32 dialogType = 4;
+  bool excludePinnedDialogs = 5;
+  int32 archiveFilter = 6;
+}
+message WebLoadGroupsRequest {
+  repeated fncbale.wire.struct.WebGroupPeer peers = 1;
+}
+message WebLoadHistoryRequest {
+  fncbale.wire.struct.WebPeer peer = 1;
+  int64 date = 2;
+  int32 loadMode = 4;
+  int32 limit = 5;
+  repeated int32 optimizations = 6;
+}
+message WebLoadMembersRequest {
+  fncbale.wire.struct.WebGroupPeer group = 1;
+  int32 limit = 2;
+  fncbale.wire.struct.WebBytesValue next = 3;
+  fncbale.wire.struct.WebCondition condition = 4;
+}
+message WebLoadUsersRequest {
+  repeated fncbale.wire.struct.WebUserPeer peers = 1;
+}
+message WebSearchContactsRequest {
+  string request = 1;
+  repeated int32 optimizations = 2;
+}
+message WebSearchMessageMoreRequest {
+  fncbale.wire.struct.WebBytesValue loadMoreState = 1;
+  fncbale.wire.struct.WebAndQuery query = 2;
+  repeated int64 optimizations = 3;
+}
+message WebSearchMessagesRequest {
+  fncbale.wire.struct.WebAndQuery query = 1;
+  repeated int64 optimizations = 2;
+}
+message WebSearchPeerRequest {
+  repeated fncbale.wire.struct.WebAndQuery query = 1;
+  repeated int64 optimizations = 2;
+}
+message WebSetRestrictionRequest { fncbale.wire.struct.WebGroupPeer groupOutPeer = 1; int32 restriction = 2; fncbale.wire.struct.WebStringValue nick = 3; }
+message WebStartPhoneAuthRequest {
+  int64 phoneNumber = 1;
+  int32 appId = 2;
+  string apiKey = 3;
+  bytes deviceHash = 4;
+  string deviceTitle = 5;
+  fncbale.wire.struct.WebStringValue timeZone = 6;
+  repeated string preferredLanguages = 7;
+  fncbale.wire.struct.WebValue imeiList = 8;
+  int32 sendCodeType = 9;
+  repeated int32 options = 10;
+}
+message WebUpdateMessageRequest {
+  fncbale.wire.struct.WebPeer peer = 1;
+  int64 rid = 2;
+  fncbale.wire.struct.WebMessage updatedMessage = 3;
+}
+message WebValidateCodeRequest {
+  string transactionHash = 1;
+  string code = 2;
+  fncbale.wire.struct.WebBoolValue_1 isJwt = 3;
+  repeated string futureAuthTokens = 4;
+}
+message WebValidatePasswordRequest {
+  string transactionHash = 1;
+  string password = 2;
+  fncbale.wire.struct.WebBoolValue_1 isJwt = 3;
+}

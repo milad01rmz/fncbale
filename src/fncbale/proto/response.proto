@@ -1,0 +1,184 @@
+// Adapted from BaleNova 0.3.1, MIT; see THIRD_PARTY_NOTICES.md.
+syntax = "proto3";
+package fncbale.wire.response;
+import "fncbale/proto/struct.proto";
+message Response {
+  WsResponse ws_response = 1;
+  WsUpdate ws_update = 2;
+}
+message WsResponse {
+  WsError error = 1;
+  bytes response = 2;
+  int64 index = 3;
+}
+message WsError {
+  int32 code = 1;
+  string message = 2;
+  fncbale.wire.struct.MapValue details = 3;
+}
+message WsUpdate {
+  Update update = 1;
+}
+message Update { fncbale.wire.struct.WebUpdate composed_update = 1; }
+message StartPhoneAuth {
+  string transaction_hash = 1;
+  bool is_registered = 2;
+  int32 sent_code_type = 5;
+  fncbale.wire.struct.Int64Value code_expiration_date = 6;
+  int32 next_send_code_type = 7;
+  fncbale.wire.struct.Int64Value next_send_code_wait_time = 8;
+  fncbale.wire.struct.Int32Value code_timeout = 9;
+}
+message Auth {
+  fncbale.wire.struct.User user = 2;
+  fncbale.wire.struct.StringValue jwt = 4;
+}
+message WebCreateGroupResponse {
+  int32 seq = 1;
+  bytes state = 2;
+  fncbale.wire.struct.WebGroup group = 3;
+  repeated fncbale.wire.struct.WebUser users = 4;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 5;
+  repeated fncbale.wire.struct.WebUserPeer notAddedUserPeers = 6;
+  string inviteLink = 7;
+}
+message WebGetContactsResponse {
+  repeated fncbale.wire.struct.WebUser users = 1;
+  bool isNotChanged = 2;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 3;
+}
+message WebGetDiffResponse {
+  repeated fncbale.wire.struct.WebT_tW_88717 updates = 1;
+  repeated fncbale.wire.struct.WebUserPeer usersRefs = 2;
+  repeated fncbale.wire.struct.WebGroupPeer groupsRefs = 3;
+}
+message WebGetFullGroupResponse {
+  fncbale.wire.struct.WebFullGroup fullGroup = 1;
+}
+message WebGetFullUserResponse {
+  fncbale.wire.struct.WebT_n4 fullUser = 1;
+}
+message WebGetGroupMembersCountResponse {
+  int32 membersCount = 1;
+}
+message WebGetMessagesViewsResponse {
+  repeated fncbale.wire.struct.WebT_THn containers = 1;
+}
+message WebGetMyGroupsResponse {
+  repeated fncbale.wire.struct.WebGroupPeer groups = 1;
+}
+message WebGetNasimFileUploadUrlResponse {
+  int64 fileId = 1;
+  string url = 2;
+  bool duplicate = 3;
+  int32 chunkSize = 4;
+  int64 blockSize = 5;
+}
+message WebGetNasimFileUrlResponse {
+  fncbale.wire.struct.WebFileUrl fileUrl = 1;
+}
+message WebGetNasimFileUrlsResponse {
+  repeated fncbale.wire.struct.WebFileUrl fileUrls = 1;
+}
+message WebGetRoutesStatesResponse {
+  repeated fncbale.wire.struct.WebState seqs = 1;
+}
+message WebJoinGroupResponse {
+  fncbale.wire.struct.WebGroup group = 1;
+  int32 seq = 2;
+  bytes state = 3;
+  int64 date = 4;
+  repeated fncbale.wire.struct.WebUser users = 5;
+  int64 rid = 6;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 7;
+  int32 inviterUserId = 8;
+  int32 groupSeq = 9;
+}
+message WebJoinPublicGroupResponse {
+  fncbale.wire.struct.WebGroup group = 1;
+  int32 seq = 2;
+  bytes state = 3;
+  int64 date = 4;
+  repeated fncbale.wire.struct.WebUser users = 5;
+  int64 rid = 6;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 7;
+  int32 inviterUserId = 8;
+  int32 groupSeq = 9;
+}
+message WebLoadDialogsResponse {
+  repeated fncbale.wire.struct.WebGroup groups = 1;
+  repeated fncbale.wire.struct.WebUser users = 2;
+  repeated fncbale.wire.struct.WebDialog dialogs = 3;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 4;
+  repeated fncbale.wire.struct.WebGroupPeer groupPeers = 5;
+}
+message WebLoadGroupsResponse {
+  repeated fncbale.wire.struct.WebGroup groups = 1;
+}
+message WebLoadHistoryResponse {
+  repeated fncbale.wire.struct.WebHistory history = 1;
+  repeated fncbale.wire.struct.WebUser users = 2;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 3;
+  repeated fncbale.wire.struct.WebGroup groups = 4;
+  repeated fncbale.wire.struct.WebGroupPeer groupPeers = 5;
+}
+message WebLoadMembersResponse {
+  repeated fncbale.wire.struct.WebMember members = 1;
+  fncbale.wire.struct.WebBytesValue next = 2;
+}
+message WebLoadUsersResponse {
+  repeated fncbale.wire.struct.WebUser users = 1;
+}
+message WebSearchContactsResponse {
+  repeated fncbale.wire.struct.WebUser users = 1;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 2;
+  repeated fncbale.wire.struct.WebGroup groups = 4;
+  repeated fncbale.wire.struct.WebGroupPeer groupPeers = 5;
+}
+message WebSearchPeerResponse {
+  repeated fncbale.wire.struct.WebT_I_ searchResults = 1;
+  repeated fncbale.wire.struct.WebUser users = 2;
+  repeated fncbale.wire.struct.WebGroup groups = 3;
+  repeated fncbale.wire.struct.WebUserPeer userPeers = 4;
+  repeated fncbale.wire.struct.WebGroupPeer groupPeers = 5;
+}
+message WebStartPhoneAuthResponse {
+  string transactionHash = 1;
+  bool isRegistered = 2;
+  int32 activationType = 3;
+  bool isImeiOk = 4;
+  int32 sentCodeType = 5;
+  fncbale.wire.struct.WebInt64Value_1 codeExpirationDate = 6;
+  int32 nextSendCodeType = 7;
+  fncbale.wire.struct.WebInt64Value_1 nextSendCodeWaitTime = 8;
+  fncbale.wire.struct.WebInt32Value_1 codeTimeout = 9;
+  repeated fncbale.wire.struct.WebExInfoAddress exInfoAddress = 10;
+  repeated int32 availableSendCodeTypes = 11;
+}
+message WebT_B_ {
+  int32 seq = 1;
+  bytes state = 2;
+}
+message WebT_ed_47679 {
+  string url = 1;
+}
+message WebT_iF_88717 {
+  repeated fncbale.wire.struct.WebSearchResult searchResults = 1;
+  repeated fncbale.wire.struct.WebUser users = 2;
+  repeated fncbale.wire.struct.WebGroup groups = 3;
+  fncbale.wire.struct.WebBytesValue loadMoreState = 4;
+  repeated fncbale.wire.struct.WebUserPeer userOutPeers = 5;
+  repeated fncbale.wire.struct.WebGroupPeer groupOutPeers = 6;
+  int64 resultCount = 7;
+}
+message WebT_pQ {
+  int32 seq = 1;
+  int64 date = 2;
+  bytes state = 3;
+  map<string, bytes> ext = 4;
+}
+message WebT_y_68945 {
+  fncbale.wire.struct.WebUser user = 2;
+  fncbale.wire.struct.WebT_TS config = 3;
+  fncbale.wire.struct.WebStringValue jwt = 4;
+}

@@ -1,0 +1,32 @@
+name: Offline SDK validation
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install '.[dev]'
+      - run: python -m pytest -q
+      - run: ruff check src/fncbale tests tools examples
+      - run: ruff format --check src/fncbale tests tools examples
+      - run: python -m build --wheel
+      - name: Install built wheel
+        run: >-
+          python -c "import pathlib, subprocess, sys; wheels = list(pathlib.Path('dist').glob('fncbale-*.whl')); assert len(wheels) == 1; subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--no-deps', '--force-reinstall', str(wheels[0])])"
+      - run: python -m pip check
+      - run: python tools/wheel_smoke.py
+      - run: python examples/login.py --help
+      - run: python examples/pool.py --help
+      - run: python examples/chat_id.py --help
+      - run: python tools/validate_docs.py

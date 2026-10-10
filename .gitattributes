@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.bin binary
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary
+docs/site/assets/*-OFL.txt -whitespace
+licenses/*.txt -whitespace

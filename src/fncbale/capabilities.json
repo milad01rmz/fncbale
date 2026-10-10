@@ -1,0 +1,338 @@
+[
+  {
+    "service": "WebFiles",
+    "method": "GetNasimFileUploadUrl",
+    "request": "WebGetNasimFileUploadUrlRequest",
+    "response": "WebGetNasimFileUploadUrlResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebFiles",
+    "method": "GetNasimFileUrl",
+    "request": "WebGetNasimFileUrlRequest",
+    "response": "WebGetNasimFileUrlResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebFiles",
+    "method": "GetNasimFileUrls",
+    "request": "WebGetNasimFileUrlsRequest",
+    "response": "WebGetNasimFileUrlsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebAbacus",
+    "method": "GetMessagesViews",
+    "request": "WebGetMessagesViewsRequest",
+    "response": "WebGetMessagesViewsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebAuth",
+    "method": "StartPhoneAuth",
+    "request": "WebStartPhoneAuthRequest",
+    "response": "WebStartPhoneAuthResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebAuth",
+    "method": "ValidateCode",
+    "request": "WebValidateCodeRequest",
+    "response": "WebT_y_68945",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebAuth",
+    "method": "ValidatePassword",
+    "request": "WebValidatePasswordRequest",
+    "response": "WebT_y_68945",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGhasedakService",
+    "method": "GetDiff",
+    "request": "WebGetDiffRequest",
+    "response": "WebGetDiffResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGhasedakService",
+    "method": "GetRoutesStates",
+    "request": "WebGetRoutesStatesRequest",
+    "response": "WebGetRoutesStatesResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "CreateGroup",
+    "request": "WebCreateGroupRequest",
+    "response": "WebCreateGroupResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "EditChannelNick",
+    "request": "WebEditChannelNickRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "EditGroupAbout",
+    "request": "WebEditGroupAboutRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "EditGroupTitle",
+    "request": "WebEditGroupTitleRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "GetFullGroup",
+    "request": "WebGetFullGroupRequest",
+    "response": "WebGetFullGroupResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "GetGroupInviteURL",
+    "request": "WebGetGroupInviteURLRequest",
+    "response": "WebT_ed_47679",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "GetGroupMembersCount",
+    "request": "WebGetGroupMembersCountRequest",
+    "response": "WebGetGroupMembersCountResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "GetMyGroups",
+    "request": "WebGetMyGroupsRequest",
+    "response": "WebGetMyGroupsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "InviteUser",
+    "request": "WebInviteUserRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "JoinGroup",
+    "request": "WebJoinGroupRequest",
+    "response": "WebJoinGroupResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "JoinPublicGroup",
+    "request": "WebJoinPublicGroupRequest",
+    "response": "WebJoinPublicGroupResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "KickUser",
+    "request": "WebKickUserRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "LeaveGroup",
+    "request": "WebLeaveGroupRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "LoadGroups",
+    "request": "WebLoadGroupsRequest",
+    "response": "WebLoadGroupsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "LoadMembers",
+    "request": "WebLoadMembersRequest",
+    "response": "WebLoadMembersResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "DeleteMessage",
+    "request": "WebDeleteMessageRequest",
+    "response": "WebT_B_",
+    "request_module": "struct",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "ForwardMessages",
+    "request": "WebForwardMessagesRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "LoadDialogs",
+    "request": "WebLoadDialogsRequest",
+    "response": "WebLoadDialogsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "LoadHistory",
+    "request": "WebLoadHistoryRequest",
+    "response": "WebLoadHistoryResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "SendMessage",
+    "request": "WebSendMessageRequest",
+    "response": "WebT_pQ",
+    "request_module": "struct",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "SendMultiMediaMessage",
+    "request": "WebSendMultiMediaMessageRequest",
+    "response": "WebT_pQ",
+    "request_module": "struct",
+    "response_module": "response"
+  },
+  {
+    "service": "WebMessaging",
+    "method": "UpdateMessage",
+    "request": "WebUpdateMessageRequest",
+    "response": "WebT_pQ",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebSearch",
+    "method": "SearchMessageMore",
+    "request": "WebSearchMessageMoreRequest",
+    "response": "WebT_iF_88717",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebSearch",
+    "method": "SearchMessages",
+    "request": "WebSearchMessagesRequest",
+    "response": "WebT_iF_88717",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebSearch",
+    "method": "SearchPeer",
+    "request": "WebSearchPeerRequest",
+    "response": "WebSearchPeerResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "EditAbout",
+    "request": "WebEditAboutRequest",
+    "response": "WebT_B_",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "EditName",
+    "request": "WebEditNameRequest",
+    "response": "WebT_B_",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "EditNickName",
+    "request": "WebEditNickNameRequest",
+    "response": "WebT_B_",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "GetContacts",
+    "request": "WebGetContactsRequest",
+    "response": "WebGetContactsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "GetFullUser",
+    "request": "WebGetFullUserRequest",
+    "response": "WebGetFullUserResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "LoadUsers",
+    "request": "WebLoadUsersRequest",
+    "response": "WebLoadUsersResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebUsers",
+    "method": "SearchContacts",
+    "request": "WebSearchContactsRequest",
+    "response": "WebSearchContactsResponse",
+    "request_module": "request",
+    "response_module": "response"
+  },
+  {
+    "service": "WebGroups",
+    "method": "SetRestriction",
+    "request": "WebSetRestrictionRequest",
+    "response": "WebT_B_",
+    "request_module": "request",
+    "response_module": "response"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "Manrope": {
+    "source": "https://github.com/google/fonts/tree/main/ofl/manrope",
+    "license": "Manrope-OFL.txt",
+    "woff2_conversion": "FontTools from official variable Manrope[wght].ttf"
+  },
+  "Vazirmatn": {
+    "source": "https://github.com/rastikerdar/vazirmatn",
+    "license": "Vazirmatn-OFL.txt"
+  }
+}

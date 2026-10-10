@@ -1,0 +1,66 @@
+{
+  "facts": [
+    {
+      "type": "request.WebGetGroupMembersCountRequest",
+      "shape": "WebGroupPeer group1; response scalar int32 membersCount1 (zero has no presence)",
+      "evidence": "cached official9216 codecs ef/el and pinned MIT schema"
+    },
+    {
+      "type": "member_count read fallback policy",
+      "shape": "UNIMPLEMENTED12 alone permits full-group fallback; scalar zero needs wrapper presence",
+      "evidence": "cached official8574 grpc Code enum plus independent current count/full reads"
+    },
+    {
+      "type": "request.WebJoinPublicGroupRequest",
+      "shape": "short WebBot peer1(type1,id2); no nonce; independent of private JoinGroup token1",
+      "evidence": "cached official9216 codec K/Q and modulesBuilder JoinPublicGroup/JoinGroup"
+    },
+    {
+      "type": "request.WebGetGroupInviteURLRequest",
+      "shape": "WebGroupPeer groupPeer1; response.url string1",
+      "evidence": "cached official9216 codecs E/L and pinned MIT schema"
+    },
+    {
+      "type": "response.Update",
+      "field": 1,
+      "shape": "struct.WebUpdate composed_update",
+      "evidence": "current-web envelope fixtures"
+    },
+    {
+      "type": "struct.WebT_LWL",
+      "field": 1,
+      "shape": "repeated int64 dates",
+      "evidence": "packed delete fixture and live roundtrips"
+    },
+    {
+      "type": "struct.WebT_U_34523",
+      "field": 6,
+      "shape": "WebHistory messageContainer",
+      "evidence": "cached web module 78637 codec U; golden wire test"
+    },
+    {
+      "type": "struct.WebHistory",
+      "field": 19,
+      "shape": "WebStringValue authorSign",
+      "evidence": "cached web NNI/ib codec; golden and live history decode"
+    },
+    {
+      "type": "request.WebSetRestrictionRequest",
+      "shape": "WebGroupPeer groupOutPeer1; int32 restriction2; WebStringValue nick3; no nonce",
+      "evidence": "cached official9216 codec ei and modulesBuilder SetRestriction; PRIVATE0/PUBLIC1"
+    }
+  ],
+  "assets": {
+    "6187.c0643819c6.js": "569c8c9d642e2ba1ec72180572194de4f62ba2cef31ace944c79f4739ea0661b",
+    "index.4aefbadad3.js": "e0aaa6a83a259fd875b6f88a24afa3541975ae3402d4a124928298d3446b61d6",
+    "9216.fb97157470.js": "76736b91d85ab117f75ec1149679a00671f9f29d69e46d7ac8a259b45b8634d3",
+    "modulesBuilder.e7abdf3264.js": "07944ec3c9acf7b33fb261587f526c337c8c727fb167441329c04c7ce265f526",
+    "8574.38a8338771.js": "219c0f705ed0abadf2f2583da68dcad749204af495a3e0d135419ee3571c183c"
+  },
+  "generated_schema_sha256": {
+    "struct": "ffa261861933b924768e8e9e57c4c1667f2a361fa74315227f655652ad2d39c5",
+    "request": "931a567f70e53087736fa594edc4a8ccaef2f10a3cb16a61ee19fec14d7105ac",
+    "response": "974a0ba2e0567ceb5b173d4104514343eb8b7967ac48ba0ed5ccb56eea7f1e46"
+  },
+  "note": "Protocol field facts supplement the pinned MIT schema; cached assets are development research, not runtime dependencies."
+}
