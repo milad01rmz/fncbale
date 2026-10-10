@@ -7,7 +7,7 @@ An independent, typed, async Python SDK for **Bale user accounts**.
 
 [فارسی](https://milad01rmz.github.io/fncbale/#fa/overview) ·
 [English documentation](https://milad01rmz.github.io/fncbale/#en/overview) ·
-[Releases](https://github.com/milad01rmz/fncbale/releases) ·
+[Release v0.1.36](https://github.com/milad01rmz/fncbale/releases/tag/v0.1.36) ·
 [API reference](docs/API.md)
 
 **0.1.36 is an alpha.** Python 3.12+; Windows and Linux. No other Bale SDK is a
@@ -21,7 +21,7 @@ With Git installed:
 python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.36"
 ```
 
-Or download the wheel from [Releases](https://github.com/milad01rmz/fncbale/releases)
+Or download the wheel from [Release v0.1.36](https://github.com/milad01rmz/fncbale/releases/tag/v0.1.36)
 and install it without Git:
 
 ```sh
