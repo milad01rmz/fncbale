@@ -29,6 +29,7 @@ docs/RELEASE_GATES.md
 docs/protocol-acceptance.json
 tools/*
 !tools/qa_model.py
+!tools/cache_memory_qa.py
 !tools/mixed_pool_qa.py
 !tools/multiaccount_qa.py
 !tools/wheel_smoke.py

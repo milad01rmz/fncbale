@@ -10,7 +10,7 @@
   const step=(items)=>({type:'steps',items});
   const card=(route,fa,en,bodyFa,bodyEn,icon)=>({route,title:t(fa,en),text:t(bodyFa,bodyEn),icon});
   const pages=[
-    {id:'overview',group:'start',icon:'layers',title:t('یک شروع روشن','A clear starting point'),nav:t('معرفی','Overview'),summary:t('کتابخانهٔ مستقل و async برای حساب کاربری بله؛ از اولین پیام تا آلبوم، eventها و عملیات قابل‌پیگیری.','An independent async Python client for Bale user accounts. Send messages and albums, receive events, and keep delivery outcomes traceable.'),tags:['Python 3.12+','asyncio','MIT','0.1.35 alpha'],sections:[
+    {id:'overview',group:'start',icon:'layers',title:t('یک شروع روشن','A clear starting point'),nav:t('معرفی','Overview'),summary:t('کتابخانهٔ مستقل و async برای حساب کاربری بله؛ از اولین پیام تا آلبوم، eventها و عملیات قابل‌پیگیری.','An independent async Python client for Bale user accounts. Send messages and albums, receive events, and keep delivery outcomes traceable.'),tags:['Python 3.12+','asyncio','MIT','0.1.36 alpha'],sections:[
       section('start-here','از کجا شروع کنم؟','Where should I start?',[
         cards([card('installation','نصب و اولین اجرا','Install and run','محیط Python را آماده کن و کتابخانه را نصب کن.','Set up Python and install the package.','terminal'),card('authentication','ورود و نشست','Login and sessions','یک بار وارد شو؛ دفعات بعد همان session را استفاده کن.','Sign in once; reuse the saved session next time.','key'),card('chat-id','گرفتن چت‌آیدی','Find a chat ID','username را به یک Peer معتبر تبدیل کن.','Resolve a username to a usable Peer.','target'),card('messages','اولین پیام','Your first message','متن، بولد، reply، ویرایش و حذف.','Text, bold, replies, edits, and deletions.','message')]),
         note('وضعیت نسخه','Release status','نسخهٔ فعلی alpha قابل‌استفاده است. ارسال، مدیا، آلبوم و eventهای هسته آزموده شده‌اند؛ قابلیت‌های آزمایشی در بخش پشتیبانی مشخص‌اند.','The current version is a usable alpha. Core messaging, media, albums, and events have acceptance coverage; experimental features are identified in the support guide.')
@@ -42,11 +42,11 @@ asyncio.run(main())`,'app.py'),
       ]),
       section('install','نصب از GitHub','Install from GitHub',[
         code(`python -m venv .venv
-.venv\\Scripts\\python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.35"`,'Windows · PowerShell','shell'),
+.venv\\Scripts\\python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.36"`,'Windows · PowerShell','shell'),
         code(`python3 -m venv .venv
-.venv/bin/python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.35"`,'Linux','shell'),
+.venv/bin/python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.36"`,'Linux','shell'),
         p('این روش به Git نیاز دارد. اگر Git نصب نیست، wheel نسخه را از Releases دانلود و نصب کن. فعلاً نصب سادهٔ pip install fncbale از PyPI وعده داده نمی‌شود.','This method requires Git. If Git is unavailable, download and install the wheel from Releases. A plain pip install fncbale from PyPI is not promised for this release.'),
-        code(`python -m pip install ./fncbale-0.1.35-py3-none-any.whl
+        code(`python -m pip install ./fncbale-0.1.36-py3-none-any.whl
 python -c "import fncbale; print(fncbale.__version__)"`,'Wheel & version check','shell')
       ]),
       section('checkout','استفاده از مثال‌ها','Use the examples',[
@@ -458,7 +458,7 @@ response_bytes = await client.invoke_raw(
     {id:'support',group:'reference',icon:'check',title:t('پشتیبانی و وضعیت نسخه','Support and release status'),summary:t('پوشش واقعی را از قابلیت آزمایشی جدا ببین. این نسخه alpha است و شواهد آزمون محدودهٔ مشخص دارند.','Distinguish accepted capabilities from experimental ones. This is an alpha with explicitly scoped test evidence.'),sections:[
       section('coverage','چه چیزهایی آزموده شده‌اند؟','What has acceptance coverage?',[
         table([t('دسته','Area'),t('وضعیت','Status')],[[t('متن، reply، edit و delete','Text, reply, edit, and delete'),t('هسته؛ آزمون زنده و آفلاین','Core; live and offline tests')],[t('عکس، ویدیو، صوت، ویس و فایل','Photo, video, audio, voice, and document'),t('هسته؛ metadata و هش دانلود بررسی شده','Core; metadata and downloaded hashes checked')],[t('آلبوم مخلوط ۲ و ۱۰ آیتمی','Mixed 2- and 10-item albums'),t('هسته؛ ترتیب، grouping و ACK گم‌شده آزموده شده','Core; order, grouping, and lost-ACK handling tested')],[t('new، edit، delete و بازیابی','New, edit, delete, and recovery'),t('هسته؛ قطع و ری‌استارت در کانال‌های کنترل‌شده','Core; disconnect and restart in controlled channels')],[t('کپی و mirror مستقل','Independent copy and mirrors'),t('زنده؛ نگاشت، reply و فایل‌های واقعی','Live; mappings, replies, and real files')],[t('اعضا و بازدید','Members and views'),t('خواندن زندهٔ محدود؛ مجوزها و کانال‌های بزرگ جدا','Bounded live reads; large/changing groups and permissions remain separate')],[t('forward_album','forward_album'),t('آزمایشی؛ آزمون آفلاین، بدون پذیرش زنده','Experimental; offline tests without live acceptance')],[t('ورود رمز دوم و چندحساب واقعی','Real second factor and distinct live accounts'),t('پیاده‌سازی/مدل آزموده؛ fixture واقعی تکمیلی لازم است','Implementation/model tests; additional real fixtures needed')]]),
-        p('آزمون کامل نسخهٔ ۰.۱.۳۵: ویندوز ۳۸۴ پاس و یک skip مربوط به symlink میزبان؛ لینوکس ۳۸۵ پاس. این اعداد پذیرش هر endpoint یا تضمین بدون خطای آینده نیستند.','Version 0.1.35 full suites: Windows 384 passes and one host symlink skip; Linux 385 passes. These totals do not certify every endpoint or guarantee future error-free operation.')
+        p('آزمون کامل نسخهٔ ۰.۱.۳۵: ویندوز ۳۸۴ پاس و یک skip مربوط به symlink میزبان؛ لینوکس ۳۸۵ پاس. این اعداد پذیرش هر endpoint یا تضمین بدون خطای آینده نیستند.','Version 0.1.35 regression baseline: Windows 384 passes and one host symlink skip; Linux 385 passes. These totals do not certify every endpoint or guarantee future error-free operation.')
       ]),
       section('sources','استقلال و منابع','Independence and sources',[
         p('تعریف‌های protobuf از BaleNova با مجوز MIT اقتباس و با قرارداد فعلی وب اصلاح شده‌اند. رفتار AioBale و Balethon برای طراحی بررسی شده؛ کد اجرایی آن‌ها داخل runtime نیست. منابع و notice در مخزن ثبت‌اند.','Protobuf definitions are adapted from MIT-licensed BaleNova and corrected against current web contracts. AioBale and Balethon behavior informed the design; their runtime implementations are not included. Provenance and notices are in the repository.'),
@@ -474,5 +474,5 @@ python -m build --wheel`,'Offline development checks','shell'),
       ])
     ]}
   ];
-  window.FNC_DOCS={version:'0.1.35',groups:[{id:'start',title:t('شروع کار','Get started')},{id:'messaging',title:t('ارسال و دریافت','Messaging')},{id:'operations',title:t('پایداری و حساب‌ها','Operations')},{id:'reference',title:t('مرجع و راهنمای خطا','Reference')}],pages};
+  window.FNC_DOCS={version:'0.1.36',groups:[{id:'start',title:t('شروع کار','Get started')},{id:'messaging',title:t('ارسال و دریافت','Messaging')},{id:'operations',title:t('پایداری و حساب‌ها','Operations')},{id:'reference',title:t('مرجع و راهنمای خطا','Reference')}],pages};
 })();

@@ -10,7 +10,7 @@ An independent, typed, async Python SDK for **Bale user accounts**.
 [Releases](https://github.com/milad01rmz/fncbale/releases) ·
 [API reference](docs/API.md)
 
-**0.1.35 is an alpha.** Python 3.12+; Windows and Linux. No other Bale SDK is a
+**0.1.36 is an alpha.** Python 3.12+; Windows and Linux. No other Bale SDK is a
 runtime dependency. Bot API, calls, and financial operations are outside this version.
 
 ## Install
@@ -18,14 +18,14 @@ runtime dependency. Bot API, calls, and financial operations are outside this ve
 With Git installed:
 
 ```sh
-python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.35"
+python -m pip install "fncbale @ git+https://github.com/milad01rmz/fncbale.git@v0.1.36"
 ```
 
 Or download the wheel from [Releases](https://github.com/milad01rmz/fncbale/releases)
 and install it without Git:
 
 ```sh
-python -m pip install ./fncbale-0.1.35-py3-none-any.whl
+python -m pip install ./fncbale-0.1.36-py3-none-any.whl
 ```
 
 This release is distributed on GitHub; a PyPI publication is not claimed.
@@ -143,7 +143,7 @@ ruff format --check src tests examples tools
 python -m build --wheel
 ```
 
-Default tests are offline. The reviewed 0.1.35 suite passed 384 tests on Windows
+Default tests are offline. The reviewed 0.1.35 regression baseline passed 384 tests on Windows
 (one host symlink skip) and 385 on Linux. The 100-client load/fault coverage is a
 local model, not 100 authenticated accounts or a service throughput guarantee.
 CI runs the offline suite on Windows and Linux.

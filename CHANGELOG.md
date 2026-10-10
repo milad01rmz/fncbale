@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.36 — complete public offline QA inputs
+
+- Include the local memory-measurement helper required by the public mixed-pool
+  regression tests. The initial publication's runtime wheel was usable, but a
+  clean repository checkout could not collect those tests without this file.
+- Keep the previous public tag immutable. Point installation and documentation
+  at the corrected release. Messaging behavior is unchanged from0.1.35.
+
 ## 0.1.35 — account-safe media admission and public documentation
 
 - Reject account changes during asynchronous media preparation before admission;

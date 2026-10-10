@@ -15,6 +15,7 @@ def main():
     script = "global.window={}; require('./docs/site/content.js'); process.stdout.write(JSON.stringify(window.FNC_DOCS));"
     output = subprocess.run(["node", "-e", script], cwd=ROOT, check=True, capture_output=True)
     docs = json.loads(output.stdout)
+    assert docs["version"] == fncbale.__version__, "Guide and SDK release versions differ"
     ids = {page["id"] for page in docs["pages"]}
     assert len(ids) == len(docs["pages"])
     examples = 0

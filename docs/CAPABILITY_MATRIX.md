@@ -1,4 +1,4 @@
-# Capability acceptance — 0.1.35 alpha
+# Capability acceptance — 0.1.36 alpha
 
 The bilingual user guide is at [fncbale documentation](https://milad01rmz.github.io/fncbale/#en/support).
 This matrix records bounded acceptance, not universal server compatibility.

@@ -13,7 +13,7 @@ python -m venv .venv
 
 On Linux, use `.venv/bin/python` after `python3 -m venv .venv`.
 To use the reviewed standalone artifact, install
-`dist/fncbale-0.1.35-py3-none-any.whl` with pip. No Bale SDK is required. Generic
+`dist/fncbale-0.1.36-py3-none-any.whl` with pip. No Bale SDK is required. Generic
 dependencies provide HTTP/2, WebSocket, protobuf, Pillow and PyAV. No separately
 installed FFmpeg CLI is needed for the current metadata path. The repository dev
 extra (`pip install '.[dev]'`) adds testing/build tools; it is not a runtime requirement.
